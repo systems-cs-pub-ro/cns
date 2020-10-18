@@ -1,0 +1,13 @@
+import struct
+
+ELF_MAGIC_OFFSET   = #TODO
+ELF_MAGIC_BYTES    = [] #TODO
+ELF_CLASS_OFFSET   = # TODO
+ELF_CLASS_BYTES    = [] #TODO
+ELF_EI_DATA_OFFSET = #TODO
+ELF_EI_DATA_BYTES  = [] #TODO
+ELF_ENTRY_OFFSET   = #TODO
+ELF_ENTRY_BYTES    = #TODO call entry point
+# ELF_ENTRY_BYTES    = #TODO call main
+# ELF_ENTRY_BYTES    = #TODO call call_me
+
