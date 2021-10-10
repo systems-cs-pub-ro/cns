@@ -1,4 +1,4 @@
-extern puts, read, printf, scanf
+extern puts, read, printf, scanf, stdout, setvbuf
 section .data
 	quote: db "640k is enough for anyone!", 0
 	give_option: db "Give option: ", 0
@@ -30,6 +30,11 @@ main:
 	push rbp
 	mov rbp, rsp
 	sub rsp, 32
+	mov ecx, 0x0
+	mov edx, 0x2
+	mov esi, 0x0
+	mov rdi, [stdout]
+	call setvbuf
 	lea rdx, [rbp - 16] ; buf
 	lea r14, [rbp - 24] ; digits
 	mov byte [r14], '0'
