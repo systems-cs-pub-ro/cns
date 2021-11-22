@@ -5,9 +5,13 @@
 #include <unistd.h>
 #include <sys/types.h>
 
+
 static void my_evil_func(void)
 {
-	puts("I'm evil, but nobody calls me :-(\n");
+	/*	This is a small hack to align RSP to 16bits for newer LIBC	*/
+	asm("push $1");
+	
+	system("/bin/sh");
 	exit(42);
 }
 
@@ -48,6 +52,7 @@ static void my_main(void)
 
 int main(void)
 {
+	setvbuf(stdout, NULL, _IONBF, 0);
 	my_main();
 	printf("Done!\n");
 }

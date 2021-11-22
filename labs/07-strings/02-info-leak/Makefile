@@ -1,4 +1,4 @@
-CFLAGS =  -Wall -Wextra -std=gnu99 -fno-stack-protector -mpreferred-stack-boundary=3 -Wno-unused-function -no-pie -fno-PIC -g
+CFLAGS =  -mno-sse -Wall -Wextra -std=gnu99 -fno-stack-protector -mpreferred-stack-boundary=3 -Wno-unused-function -no-pie -fno-PIC -g
 LDFLAGS = -no-pie -fno-PIC
 
 .PHONY: all clean
