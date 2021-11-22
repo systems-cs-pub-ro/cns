@@ -9,6 +9,8 @@ int main(void)
 	char buffer[16];
 	char fmt_buffer[256];
 
+	setvbuf(stdout, NULL, _IONBF, 0);
+	
 	fgets(buffer, 16, stdin);
 	fgets(fmt_buffer, 256, stdin);
 	printf(fmt_buffer, buffer);
