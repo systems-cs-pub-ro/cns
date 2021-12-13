@@ -15,7 +15,6 @@ int stop(int a)
 	}
 	fd = open("./flag", 0);
 	puts("-> secret vault opened");
-	fflush(stdout);
 	return 0;
 }
 
@@ -27,14 +26,12 @@ int right(int a, int b)
 	}
 	read(fd, flag, 32);
 	puts("-> vault contents transferred");
-	fflush(stdout);
 	return 0;
 }
 
 int there(void)
 {
 	printf("You got the flag: %s\n", flag);
-	fflush(stdout);
 	return 0;
 }
 
@@ -48,7 +45,23 @@ ssize_t play(void)
 
 int main(int argc, char* argv[])
 {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stdin, NULL, _IONBF, 0);
+
 	play();
 	puts("Thank you!");
 	return 0;
+}
+
+void _rop_help()
+{
+	__asm__ (
+		"pop %rdi;"
+		"ret;"
+	);
+
+		__asm__ (
+		"pop %rsi;"
+		"ret;"
+	);
 }
