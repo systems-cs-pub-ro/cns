@@ -40,7 +40,7 @@ ssize_t play(void)
 	char buf[40];
 	puts("Welcome to our Retired Old Programmers message board!");
 	puts("Please leave a message: ");
-	return read(0, buf, 160);
+	return read(0, buf, 112);
 }
 
 int main(int argc, char* argv[])
