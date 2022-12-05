@@ -5,7 +5,7 @@
 #include <fcntl.h>
 
 int fd;
-char flag[32];
+char flag[32000] = {1};
 
 int stop(int a)
 {
